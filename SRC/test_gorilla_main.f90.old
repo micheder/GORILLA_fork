@@ -30,14 +30,12 @@
 !
 !-------------------------------------------------------------------------------------------!
 !
-    use tetra_grid_settings_mod, only:      load_tetra_grid_inp      , n_field_periods
+    use tetra_grid_settings_mod, only:      load_tetra_grid_inp
     use gorilla_settings_mod, only:         load_gorilla_inp
     use orbit_timestep_gorilla_mod, only:   initialize_gorilla,orbit_timestep_gorilla
     use gorilla_plot_mod, only:             gorilla_plot
 !
-    use tetra_physics_mod, only: vector_potential_sthetaphi_vmec
 !use supporting_functions_mod, only: alphas_runov2sym_flux
-    use constants, only: pi
 !
     implicit none
 !
@@ -53,10 +51,6 @@
     double precision                  :: t_step             ! length of orbit time step (in s)
     double precision, dimension(3)    :: x                  ! particle positions x_1, x_2, x_3 depending on coordinate system
 !
-!VMEC field quantities
-double precision :: s_0,theta_0,phi_0,A_s,A_theta,A_phi,B_phi
-double precision :: B_s,B_theta,bmod,sqg,dR_ds,dZ_ds
-integer :: i,n_output
 !-------------------------------------------------------------------------------------------!
 !------------------------- Load input files and initialization -----------------------------!
 !
@@ -158,20 +152,7 @@ integer :: i,n_output
     end select
 !-------------------------------------------------------------------------------------------!
 !
-!
-s_0 = 0.6d0
-theta_0 = 0.d0
-n_output = 100
-
-do i = 1,n_output
-phi_0 = 2.d0 * pi /n_field_periods /dble(n_output) * dble(i)
-
-call vector_potential_sthetaphi_vmec(s_0,theta_0,phi_0, &
-                  & 0,1.d0,A_s,A_theta,A_phi,B_s,B_theta,B_phi,bmod, &
-                  & sqg,dR_ds,dZ_ds)
-
-write (99,*) i,phi_0,bmod
-end do
+! call alphas_runov2sym_flux('start_t.confined','orbit_start_sthetaphilambda.dat')
 !
   end program test_gorilla_main
 !

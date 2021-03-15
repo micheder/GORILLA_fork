@@ -74,9 +74,7 @@
 !
     double precision,public :: cm_over_e,particle_charge,particle_mass,mag_axis_R0,mag_axis_Z0
     integer, public, protected :: coord_system
-!
-    public :: vector_potential_sthetaphi_vmec
-!
+!   
   contains
 !
     subroutine make_tetra_physics(coord_system_in,ipert_in,bmod_multiplier_in)

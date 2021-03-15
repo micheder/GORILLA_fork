@@ -46,7 +46,7 @@
  boole_poincare_vpar_0 = .true. ,
 !
  !Number of skipped (non-printed) Poincaré cuts at parallel velocity $v_\parallel$ = 0
- n_skip_vpar_0 = 1 ,
+ n_skip_vpar_0 = 10 ,
 !
  !Filename for Poincaré cuts at parallel velocity $v_\parallel$ = 0 in cylindrical coordinates (R,$\varphi$,Z)
  filename_poincare_vpar_0_rphiz = 'poincare_plot_vpar_0_rphiz.dat' ,
@@ -59,7 +59,7 @@
  !Plot full orbit (after every tetrahedron passing)
 !
  !Switch for plotting full orbit
- boole_full_orbit = .true. ,
+ boole_full_orbit = .false. ,
 !
  !Number of skipped (non-printed tetrahedra passings) full orbit
  n_skip_full_orbit = 1 ,

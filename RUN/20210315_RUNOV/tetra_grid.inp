@@ -7,9 +7,9 @@
  !Rectangular: nR, Field-aligned: ns
  n1 = 100 ,
  !Rectangular: nphi, Field-aligned: nphi                  			
- n2 = 60 ,
+ n2 = 100 ,
  !Rectangular: nZ, Field-aligned: ntheta                          		
- n3 = 60 ,
+ n3 = 100 ,
 !
  !Grid kind
  !1 ... rectangular grid for axisymmetric EFIT data (g-file)
@@ -31,7 +31,7 @@
  n_field_periods_manual =  1 ,
 !
  !Symmetry Flux Coordinates Annulus (Minimal value for flux coordinates s)
- sfc_s_min = 1.d-1 ,
+ sfc_s_min = 1.d-3 ,
 !
  !Option for $\theta$-variable being used in grid
  ! 1 ... theta scaling in symmetry flux coordinates
